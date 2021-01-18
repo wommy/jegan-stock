@@ -1,4 +1,4 @@
-// LOG for creating schema
+-- LOG for creating schema
 
 CREATE TABLE stock {
 	_ID int AUTO_INCREMENT PRIMARY KEY,
