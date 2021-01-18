@@ -1,0 +1,27 @@
+LOG for creating schema
+
+create
+	schema
+		material
+
+toSchema
+	material
+		addField
+			_id, id_qualities
+		addField
+			name, text
+
+duplicateSchema
+	material
+		as
+			product
+
+toSchema
+	products
+		addField
+			array, fromMaterials
+
+createTable products
+	withSchema item
+		plus material(s)
+
