@@ -11,7 +11,8 @@ CREATE TABLE quantity {
 	quantity int NOT NULL
 }
 
-CREATE TABLE requires {
-	stock_ID of product
-	stock_ID of material
+CREATE TABLE productComponents {
+	product_ID int FOREIGN KEY REFERENCES stock(_ID),
+	material_ID int FOREIGN KEY REFERENCES stock(_ID),
+	CONSTRAINT product PRIMARY KEY (product_ID, material_ID)
 }
