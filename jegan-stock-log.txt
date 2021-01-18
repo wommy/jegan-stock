@@ -1,27 +1,12 @@
-LOG for creating schema
+// LOG for creating schema
 
-create
-	schema
-		material
+CREATE TABLE stock {
+	_ID int AUTO_INCREMENT PRIMARY KEY,
+	name varchar NOT NULL UNIQUE,
+}
 
-toSchema
-	material
-		addField
-			_id, id_qualities
-		addField
-			name, text
-
-duplicateSchema
-	material
-		as
-			product
-
-toSchema
-	products
-		addField
-			array, fromMaterials
-
-createTable products
-	withSchema item
-		plus material(s)
-
+CREATE TABLE quantity {
+	_ID int AUTO_INCREMENT PRIMARY KEY,
+	stock_ID FOREIGN KEY REFERENCES stock(_ID),
+	quantity int NOT NULL
+}
