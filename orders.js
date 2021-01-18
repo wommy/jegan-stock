@@ -13,4 +13,11 @@
 // -1 ea [ thank_you, mailer ], -${order.value} ${order.key}
 // -1 ea [ thank_you, mailer ], -3 lighter
 
-// this is a promise
+/*
+	order( order_ID ) => 
+		stock =>
+			[thank_you, mailer].push(-1), 
+			${order.key}.push(-${order.val}), 
+*/
+
+// returns a promise
