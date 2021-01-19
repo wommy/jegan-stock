@@ -1,0 +1,15 @@
+{
+  "name": "jegan-stock",
+  "version": "1.0.0",
+  "description": "jegans stock app by technomad",
+  "main": "index.js",
+  "repository": "git@github.com:wommy/jegan-stock.git",
+  "author": "wommy <tom@technomad.media>",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
