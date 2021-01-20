@@ -65,7 +65,7 @@ this is why all these files need to be the same,
 theyre probably going to be in app.js  
 maybe i should just be writing that
 
-## cp stock.json >> app.js
+## cp stock.json >> app.js ; refactor.1
 
 of course this will not do, clean it up  
 what this actually is, is the  
@@ -73,9 +73,33 @@ stock: key: product, val: material,
 mapped over an array to give it quantity  
 how to show this?
 
-## pushed .1
+## pushed .2
 
 so whats next, i need to  
 create the quantities BY map thru the objs: { key: val }
+
+## pushed .3
+
+orders needs alot of work  
+every order that comes in is going to have an ID,  
+which is going to be tied to a person ; foreign_key  
+and then theres going to be a array of objects ; orderArr  
+this will all be later tho
+
+my logic in orders shows  
+
+``` order.js
+
+order => 
+	[ thank_you, parcel ].push( -1 ),
+	${ order.key }.push( ${order.val } )
+
+```
+
+this returns a promise  
+`quantities.positive ? rej : res`
+
+## pushed .4
+
 
 

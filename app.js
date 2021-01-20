@@ -65,3 +65,16 @@
 	{ miniprint: [ "0" ] },
 ]
 
+/* // order logic
+
+	order => 
+		[ thank_you, parcel ].push( -1 ),
+		${ order.key }.push( ${order.val } )
+
+*/
+
+/* // Promise : checks that everything positive
+
+	quantities.positive ? rej : res
+
+*/
