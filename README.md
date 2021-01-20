@@ -101,5 +101,31 @@ this returns a promise
 
 ## pushed .4
 
+so i kinda started this in the last one, but  
+whats the applications logic
+
+``` 
+
+	newProduct( name, materialArr ) => stock.push(
+		name: [ 
+			( materialArr.each ) => "ea",
+		]
+	)
+
+```
+
+this is the first part  
+it adds the new product to stock
+
+the second part is  
+from the product, it creates the quantities
+
+it might be easier to work with this as an array
+
+```
+
+	newProduct ( name, materialArr ) => 
 
 
+
+```
