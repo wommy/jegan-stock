@@ -1,21 +1,31 @@
-const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
-const uri = `mongodb+srv://${process.env.DB}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB}/jegan?retryWrites=true&w=majority`
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
-async function findAllProducts() {
-  try {
-    await client.connect()
-    await client.db("stock").collection("products")
-      .find()    
-      .forEach(console.dir)
-  } catch (error) {
-    console.error(error)
-  } finally {
-    await client.close()
-  }
+async function getTable() {
+	await client.db("jegan").collection("stock")
+		.find()
+		.forEach(console.dir)
 }
 
-findAllProducts()
+async function postRow() {
+	await client.db("jegan").collection("stock")
+		.insert({ product: 'thank_you', materials: [ 'card', 'envelope' ] })
+}
+
+async function connDB() {
+	try {
+		await client.connect()
+		await postRow()
+		await getTable()
+	} catch (err) {
+		throw err
+	} finally {
+		await client.close()
+	}
+}
+
+connDB()
