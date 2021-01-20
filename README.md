@@ -58,4 +58,14 @@ products.js should be the stock.js, which should be quantities, or something
 products is the player, and thats a bad name, because its also materials  
 but all the logic is in quantities, get to that later
 
+## 
+
+ok so,  
+i moved stock >> quantities, and products >> stock
+
+so now i opened stock, and its bare,  
+this is why all these files need to be the same,  
+theyre probably going to be in app.js  
+maybe i should just be writing that
+
 
