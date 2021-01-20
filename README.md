@@ -73,4 +73,9 @@ stock: key: product, val: material,
 mapped over an array to give it quantity  
 how to show this?
 
+## pushed .1
+
+so whats next, i need to  
+create the quantities BY map thru the objs: { key: val }
+
 
