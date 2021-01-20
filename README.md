@@ -106,9 +106,9 @@ whats the applications logic
 
 ``` 
 
-	newProduct( name, materialArr ) => stock.push(
+	newProduct( name, ...material ) => stock.push(
 		name: [ 
-			( materialArr.each ) => "ea",
+			( ...material.each ) => "ea",
 		]
 	)
 
@@ -122,10 +122,16 @@ from the product, it creates the quantities
 
 it might be easier to work with this as an array
 
-```
+you could take in the product.name  
+push each material onto it  
+call it the productArr
 
-	newProduct ( name, materialArr ) => 
+`newProduct ( name, ..material) => new Array productArr`
+
+from there you could build the newProduct, and  
+build the quantities easy
+
+`for ea in productArr => { ea: [0] }`
 
 
 
-```
