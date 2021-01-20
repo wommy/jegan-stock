@@ -133,5 +133,39 @@ build the quantities easy
 
 `for ea in productArr => { ea: [0] }`
 
+## ref 4.3
+
+so whats the logic rn  
+remember also there needs to be logic to push to mongo cleanly  
+order can come later
+
+newProduct ( key, Arr ) => 
+	Arr.push( key )
+
+	quantities ( Arr ) => ea => quantities.map( 
+		ea => { ea: [0] }
+	)
+
+	products ( Arr ) => {
+		key: Arr.pop(),
+		arr: Arr
+	}
+	
+	
+addQuantity ( name, quantity ) =>
+	name.quantity.push( quantity )
+
+	
+if name = product.key
+	for ea in product.key.materialArr
+		.push( -quantity )
+		
+		
+imma try to typing out some english  
+
+if the name in add quantity is a key,  
+first add a negative quantity from ea material.quantity  
+check to see if ea material.quantity is positive  
+if true, add the quantity to product and minus from materials
 
 
