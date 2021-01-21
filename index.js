@@ -10,11 +10,9 @@ async function connDB() {
 	try {
 		await client.connect()
 		await get("stock")
-	} catch (err) {
-		throw err
-	} finally {
-		await client.close()
-	}
+		await get("quantities")
+	} catch (err) { throw err
+	} finally { await client.close() }
 }
 
 connDB()
