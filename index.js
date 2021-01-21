@@ -5,6 +5,8 @@ const uri = `mongodb+srv://${process.env.DB}/jegan?retryWrites=true&w=majority`
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
+const post = require('./post.json')
+
 async function getTable() {
 	await client.db("jegan").collection("stock")
 		.find()
@@ -13,7 +15,7 @@ async function getTable() {
 
 async function postRow() {
 	await client.db("jegan").collection("stock")
-		.insert({ product: 'thank_you', materials: [ 'card', 'envelope' ] })
+		.insertOne(post)
 }
 
 async function connDB() {
