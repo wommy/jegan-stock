@@ -5,24 +5,15 @@ const uri = `mongodb+srv://${process.env.DB}/jegan?retryWrites=true&w=majority`
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
-const post = require('./post.json')
-
-async function getTable() {
-	await client.db("jegan").collection("stock")
-		.find()
-		.forEach(console.dir)
-}
-
-async function postRow() {
-	await client.db("jegan").collection("stock")
-		.insertOne(post)
-}
+const quantityArr = require('./quantityArr.json')
 
 async function connDB() {
 	try {
 		await client.connect()
-		await postRow()
-		await getTable()
+		await client.db("jegan").collection("quantities")
+			.insertMany( quantityArr )
+		await client.db("jegan").collection("quantities")
+			.find().forEach(console.dir)
 	} catch (err) {
 		throw err
 	} finally {
