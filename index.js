@@ -1,19 +1,15 @@
-const MongoClient = require('mongodb').MongoClient
-require('dotenv').config()
+const client = require("./client")
 
-const uri = `mongodb+srv://${process.env.DB}/jegan?retryWrites=true&w=majority`
-
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-
-const quantityArr = require('./quantityArr.json')
+async function get( collectionName ) {
+	await client.db("jegan")
+		.collection( collectionName )
+		.find().forEach(console.dir)
+}
 
 async function connDB() {
 	try {
 		await client.connect()
-		await client.db("jegan").collection("quantities")
-			.insertMany( quantityArr )
-		await client.db("jegan").collection("quantities")
-			.find().forEach(console.dir)
+		await get("stock")
 	} catch (err) {
 		throw err
 	} finally {
