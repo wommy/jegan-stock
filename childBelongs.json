@@ -1,0 +1,49 @@
+{
+	"lighter": [0],
+	"thank_you": [0],
+	"parcel": [0],
+	"blank": {
+		"quantity": [0],
+		"belongsTo": "lighter"
+	},
+	"art": {
+		"quantity":  [0],
+		"belongsTo": "lighter"
+	},
+	"laminate": {
+		"quantity":  [0],
+		"belongsTo": "lighter"
+	},
+	"bag": {
+		"quantity":  [0],
+		"belongsTo": "lighter"
+	},
+	"card": {
+		"quantity":  [0],
+		"belongsTo": "thank_you"
+	},
+	"envelope": {
+		"quantity":  [0],
+		"belongsTo": "thank_you"
+	},
+	"mailer": {
+		"quantity":  [0],
+		"belongsTo": "parcel"
+	},
+	"business_card": {
+		"quantity":  [0],
+		"belongsTo": "parcel"
+	},
+	"miniprint": {
+		"quantity":  [0],
+		"belongsTo": "parcel"
+	},
+	"sticker_1": {
+		"quantity":  [0],
+		"belongsTo": "parcel"
+	},
+	"sticker_2": {
+		"quantity": [0],
+		"belongsTo": "parcel"
+	}
+}
