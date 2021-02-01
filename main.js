@@ -1,12 +1,11 @@
-const axios = require('axios')
-
 async function getStock(){
-	const results = await axios.get('')
-	renderBody()
+	await renderBody('wommy changed')
 }
 
-function renderBody(){
-	document.getElementById('app').innerHTML = `<h1> wommy working </h1>`
+function renderBody(x){
+	document.getElementById('app').innerHTML = `<h1>${x}</h1>`
 }
 
 document.getElementById('getStock').addEventListener('click', getStock)
+
+renderBody('wommy working')
