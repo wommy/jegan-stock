@@ -1,0 +1,8 @@
+[build]
+	publish= ""
+	command= "echo 'wommy working'"
+	functions= "functions"
+[[redirects]]
+	from= "/api/*"
+	to= "/.netlify/functions/:splat"
+	status= 200
