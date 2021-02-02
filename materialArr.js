@@ -15,8 +15,6 @@ function objectify(x) {
 	return { name: x, quantity: [0] }
 }
 
-const materialObjs = materialsArr.map( x => { 
-	return { name: x, quantity: [0] } 
-} ) 
+const materialObjs = materialsArr.map( x => ({ name: x, quantity: [0] }) ) 
 
 console.log(materialObjs)

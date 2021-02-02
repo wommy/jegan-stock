@@ -7,9 +7,9 @@ async function get( collectionName ) {
 
 function productCreator( name, materialArr ) {
 	const quantity = [0]
-	const materials = materialArr.map( x => { 
-		return { name: x, quantity } 
-	} )
+	const materials = materialArr.map( x => ({ 
+		name: x, quantity
+	}) )
 	return { name, quantity, materials }
 }
 
