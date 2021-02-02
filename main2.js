@@ -16,18 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	},
 */
 
-let template = `<div id="template">
-<span>${arr.name}:</span>
-<span>${arr.quantity}</span>
-</div>`
+const template = ({ name, quantity }) => `<span>${name}: ${quantity}</span>`
 
 function getProducts(e) { e.preventDefault()	
 	fetch( '/api/products' )
 		.then( res => res.json() )
-		.then( content => {
-			products = content.map( ea => `<div>
-			<p>${ea.name}: ${ea.quantity}, materials: ${ea.materials.map( ma => `<div>${ma.name}: ${ma.quantity}</div>` ).join("")}</p>
-		</div>` ).join("")
+		.then( content => { 
+			products = content.map( ea => `<p>
+				${template(ea)}, materials:
+				${ea.materials.map( ma => `<br/>`+template(ma) )}
+			</p>` ).join("")
 			document.getElementById('app').innerHTML = products
 		}).catch( err => console.error )
 }
