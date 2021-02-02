@@ -5,28 +5,25 @@ async function get( collectionName ) {
 		.find().forEach(console.dir)
 }
 
-function productCreator( name, materialArr ) {
+function productCreator( name, materials ) {
 	const quantity = [0]
-	const materials = materialArr.map( x => ({ 
+	materials = materials.map( x => ({ 
 		name: x, quantity
 	}) )
 	return { name, quantity, materials }
 }
 
-async function post( x, y ) {
+async function post( product, materials ) {
 	await db.collection("products")
-		.insertOne( productCreator( x, y ) )
+		.insertOne( productCreator( product, materials ) )
 }
 
 async function connDB() {
 	try {
 		await client.connect()
 		db = client.db("jegan")
-		await get("products")
 		await post( "lighter", [ "blank", "art", "laminate", "bag" ] )
-		await get("products")
 		await post( "thank_you", [ "card", "envelope" ] )
-		await get("products")
 		await post( "parcel", [ "mailer", "business_card", "miniprint", "sticker1", "sticker2" ] )
 		await get("products")
 	} catch (err) { throw err
