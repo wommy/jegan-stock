@@ -5,17 +5,18 @@ async function get( collectionName ) {
 		.find().forEach(console.dir)
 }
 
-async function postProduct() {
+function productCreator( name, materialArr ) {
+	const quantity = [0]
+	const materials = materialArr.reduce( ( acc, i ) => { 
+		acc.push( { name: i, quantity })
+		return acc
+	}, [] )
+	return { name, quantity, materials }
+}
+
+async function post( x, y ) {
 	await db.collection("products")
-		.insertOne({
-			thank_you: { 
-				quantity: [0], 
-				materials: { 
-					card: { quantity: [0] },
-					envelope: { quantity: [0] }
-				}
-			}
-		})
+		.insertOne( productCreator( x, y ) )
 }
 
 async function connDB() {
@@ -23,10 +24,15 @@ async function connDB() {
 		await client.connect()
 		db = client.db("jegan")
 		await get("products")
-		await postProduct()
+		await post( "lighter", [ "blank", "art", "laminate", "bag" ] )
+		await get("products")
+		await post( "thank_you", [ "card", "envelope" ] )
+		await get("products")
+		await post( "parcel", [ "mailer", "business_card", "miniprint", "sticker1", "sticker2" ] )
 		await get("products")
 	} catch (err) { throw err
 	} finally { await client.close() }
 }
 
 connDB()
+// productCreator( "thank_you", ["card","envelope"] )
