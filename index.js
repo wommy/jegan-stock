@@ -7,10 +7,9 @@ async function get( collectionName ) {
 
 function productCreator( name, materialArr ) {
 	const quantity = [0]
-	const materials = materialArr.reduce( ( acc, i ) => { 
-		acc.push( { name: i, quantity })
-		return acc
-	}, [] )
+	const materials = materialArr.map( x => { 
+		return { name: x, quantity } 
+	} )
 	return { name, quantity, materials }
 }
 
