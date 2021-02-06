@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test</title>
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+	<link href="style.css" rel="stylesheet" />
+</head>
+<body class="m-4">
+	<main
+		class="w-3/4 m-auto"
+		x-data="{ products: [ 
+			{ name: 'lighter', quantity: [0], materials: [
+				{ name: 'blank', quantity: [0] },
+				{ name: 'art', quantity: [0] },
+				{ name: 'laminate', quantity: [0] },
+				{ name: 'bag', quantity: [0] }
+			] },
+			{ name: 'thank you', quantity: [0], materials: [
+				{ name: 'card', quantity: [0] }, 
+				{ name: 'envelope', quantity: [0] }
+			] },
+			{ name: 'parcel', quantity: [0], materials: [
+				{ name: 'mailer', quantity: [0] }, 
+				{ name: 'business card', quantity: [0] },
+				{ name: 'miniprint', quantity: [0] },
+				{ name: 'sticker1', quantity: [0] },
+				{ name: 'sticker2', quantity: [0] }
+			 ] }
+		] }"
+	>
+		<template x-for="product in products">
+			<div class="grid grid-cols-2 bg-yellow-100 gap-8 p-4" >
+				<div class="text-right">
+					<span x-text='product.name'></span>
+					<span>: </span>
+					<span x-text='product.quantity'></span>
+				</div>
+				<div class="flex flex-col bg-yellow-200 gap-2">
+					<template x-for="material in product.materials">
+						<div>
+							<span x-text='material.quantity'></span>
+							<span>: </span>
+							<span x-text='material.name'></span>
+						</div>
+					</template>
+				</div>
+			</div>
+		</template>
+	</main>
+</body>
+</html>
