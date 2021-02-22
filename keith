@@ -1,0 +1,81 @@
+{
+	name: "lighter",
+	product: ["plain_lighter", "art"],
+	materials: ["lighter_blank", "laminate", "bag"],
+	art: [
+		"all my plants are dead": ["white","black"],
+		"Shroom": ["Booty & Titty","Titty","Booty"],
+		"zodiac": [
+			"Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra",
+			"Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"
+		],
+		"default": [
+			"skull flame","reaper","inside me","skull cone",
+			"spooky smoke","play with me","deadly flutter","butterfly",
+			"dead inside","praise me","cumfort me","horny",
+			"show me your kitties","light me up","death crown",
+			"be nice or leaf","my body my choice","lit","lust",
+			"hotter than hell","watch me grow","flowers grow","bowie"
+		]
+		"custom"
+		],
+	]
+}
+{
+	product: "enamel pin",
+	price: 6,
+	design: ["melt me", "deadly flutter"]
+}
+
+patch: {
+	price: 6,
+	design: [
+		"patch": ["play with me", "deadly flutter"]
+	]
+}
+
+product: 'all my plants are dead - white',
+quantity: [0]
+
+product_name: $art.category.title
+product_img: $art.category.img
+product_price: $art.category.price
+quantity: [0]
+
+{
+	name: img
+}
+
+{
+	'all my plants are dead - white': 'https://static.wixstatic.com/media/497cc9_4804c3b4a6d449c4ba817596135729df~mv2.png/v1/fill/w_383,h_383,al_c,q_85,usm_0.66_1.00_0.01/497cc9_4804c3b4a6d449c4ba817596135729df~mv2.webp'
+}
+
+
+sticker: [
+	{ "all my plants are dead": 4},
+	{ "mushroom": 4},
+	{ "live deliciously": 4},
+	{ "horny": 4},
+	{ "play with me": 5},
+	{ "sanderson sisters": 3},
+	{ "deadly flutter": 4},
+	{ "cumfort me holographic": 2},
+	{ "cumfort me holographic": 2}
+]
+
+skate_deck: {
+	price: 95,
+	design: [
+		"Devilish","Spooky Smoke","Lust","Be Nice or Leaf", 
+		"Skull Cone","Reaper","Flowers Grow","Cumfort Me",
+		"Praise Me","Bound","Octoskull"
+	]
+}
+
+pins-patch: {
+	price: 6,
+	design: [
+		"melt me", "
+		
+	]
+}
